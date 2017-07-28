@@ -70,7 +70,7 @@ mYZm2BA8YUrmHxvhhRhXJOLIYt0=
 #### Http的Post调用参数说明
 
 | 参数名 | 参数类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- |
 | app_id | String(32) | 向云净网申请的appId，每种检测数据类型独立申请201508120001 | 
 | version | String | 固定为2.0 |
 | timestamp	|String	| 发送请求的时间，格式“yyyy-MM-dd HH:mm:ss” |
@@ -80,7 +80,7 @@ mYZm2BA8YUrmHxvhhRhXJOLIYt0=
 #### 其中参数json_data的数据说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- | ---- |
 | id	| 必选 | string(32) | 内容的唯一标识，用于用户标记数据 |
 | relation_id | 必选 | string(32) | 关联内容的Id(例如留言、评论、回复等主内容的主键)，用于标记数据 |
 | publish_date | 必选 | String(19) | 用户发布内容的时间，格式“yyyy-MM-dd HH:mm:ss” |
@@ -94,7 +94,7 @@ mYZm2BA8YUrmHxvhhRhXJOLIYt0=
 #### contents数据说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- | ---- |
 | type | 必选 | string(32) | 内容类型；text:文本；image:图片；original_video:直接可以通过浏览器内置播放器播放的视频；warpper_video:通过浏览器可以播放，url返回信息为iframe包装后的窗口；original_audio:直接可以通过浏览器内置播放器播放的音频；wrapper_audio：通过浏览器可以播放，url返回信息为iframe包装后的窗口 |
 | content | 必选 | string(32) | 文本内容或图片、视频的url地址，其中视频的url根据传输的类型，如果是标准格式，可以直接给完整的媒体的url；如果不是标准格式，需要给出通过iframe包装后的url地址|
 | master | 必选 | int | 1、type为text的，如果传入了多条文本，其中只有一条可以设置主记录，云净网会对其审核，其余文本为审核辅助字段，不进行审核操作。2、type为image或video类型的，此字段无意义。3、值定义：1-主记录文本；0-辅助字段，不审核。 |
@@ -142,7 +142,7 @@ app_id=201608200001&version=2.0&timestamp=2016-08-24 16:45:04&sign=KYqidJA21UdrJ
 #### Json返回参数说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- | ---- |
 | code | 必选 | Integer | 1001-操作正常，结果为通过。1002-调用正常，结果为拦截。1003-调用正常，人工审核。2000-不支持的操作。4000-上传参数有误。4005-授权校验失败。5000-服务器繁忙或异常 |
 | msg | 必选 | string | code的对应说明。 |
 | id | 必选 | String(32) | 数据Id |
@@ -190,7 +190,7 @@ Date: Mon, 24 Aug 2015 08:45:05 GMT
 #### Http的Post参数说明
 
 | 参数名称	| 参数类型	| 说明 | 
-| -------- | --------| -- |
+| ---- | ---- | ---- | ---- |
 | version | String | 固定为2.0 | 
 | sign | String(256) | 摘要内容：relation_id,timestamp连接，用英文半角逗号“,”相连,算法见1.3 | 
 | json_data	| string | 具体见json_data说明，采用json格式 | 
@@ -198,7 +198,7 @@ Date: Mon, 24 Aug 2015 08:45:05 GMT
 #### json_data说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | -------- | -- |
+| ---- | ---- | ---- | ---- |
 | id | 必选 | string(32) | 内容的唯一主键 |
 | relation_id | 必选 | string(32) | 关联内容的Id(例如留言、评论、回复等主内容的主键)
 | app_id | 必选 | String(19) | 应用标识 |
@@ -236,7 +236,7 @@ version=2.0&json_data=%7b%22id%22%3a%228a32158b836642c19e0807d0f13a73c3%22%2c%22
 #### Json返回参数说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | -------- | -- |
+| ---- | ---- | ---- | ---- |
 | code | 必选 | Integer | 200-成功。其余-失败。 |
 | msg | 必选 | string | 发生错误时code的对应说明。 |
 
@@ -275,7 +275,7 @@ Date: Mon, 24 Aug 2015 08:45:05 GMT
 #### Http的Post调用参数说明
 
 | 参数名称 | 参数类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- |
 | platform_id | string | 向云净网申请的平台Id，为整数值 |
 | version | String | 固定为2.0 |
 | timestamp | String | 发送请求的时间，格式“yyyy-MM-dd HH:mm:ss” |
@@ -300,7 +300,7 @@ platform_id=1&version=2.0&timestamp=2015-09-09 17:08:55&sign=XveWj8HGsjlSdo6%2fX
 #### Json返回参数说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- | ---- |
 | code | 必选 | Integer | 1001-操作正常，返回结果。2000-不支持的操作4000-上传参数有误4005-授权校验失败5000-服务器繁忙或异常 |
 | msg | 必选 | string | code的对应说明。 |
 | timestamp | 必选 | string | 云净网服务器的时间，格式“yyyy-MM-dd HH:mm:ss” |
@@ -309,7 +309,7 @@ platform_id=1&version=2.0&timestamp=2015-09-09 17:08:55&sign=XveWj8HGsjlSdo6%2fX
 #### result_list说明
 
 | 字段名 | 约束 | 类型 | 说明 |
-| -------- | --------| -- |
+| ---- | ---- | ---- | ---- |
 | id | 必选 | Integer | 平台用户传入的id，可用于删除或恢复数据的键值 |
 | relation_id | 必选 | string | 平台用户接入时传入的relation_id，可用于删除或恢复数据的关联键值
 | audit_date | 必选 | string | 云净网审核时间 |
