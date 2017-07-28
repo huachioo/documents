@@ -190,7 +190,7 @@ Date: Mon, 24 Aug 2015 08:45:05 GMT
 #### Http的Post参数说明
 
 | 参数名称	| 参数类型	| 说明 | 
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | version | String | 固定为2.0 | 
 | sign | String(256) | 摘要内容：relation_id,timestamp连接，用英文半角逗号“,”相连,算法见1.3 | 
 | json_data	| string | 具体见json_data说明，采用json格式 | 
