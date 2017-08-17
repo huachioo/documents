@@ -148,6 +148,7 @@ app_id=201608200001&version=2.0&timestamp=2016-08-24 16:45:04&sign=KYqidJA21UdrJ
 | id | 必选 | String(32) | 数据Id |
 | relation_id | 必选 | String(32) | 数据关联Id |
 | timestamp | 必选 | string | 云净网服务器的时间，格式“yyyy-MM-dd HH:mm:ss” |
+| reason | 必选 | string | 结果原因 |
 
 #### 应答示例
 
@@ -205,6 +206,7 @@ Date: Mon, 24 Aug 2015 08:45:05 GMT
 | audit_date | 可选 | string(32) | 审核时间 |
 | result | 可选 | Int | 0-违规；1-正常 |
 | op_type | 可选 | Int | 判定类型：1-系统；2-人工 |
+| reason | 必选 | string | 结果原因 |
 
 #### 请求示例
 
@@ -315,6 +317,7 @@ platform_id=1&version=2.0&timestamp=2015-09-09 17:08:55&sign=XveWj8HGsjlSdo6%2fX
 | audit_date | 必选 | string | 云净网审核时间 |
 | app_id | 必选 | string | 平台用户在云净网申请的app_id，用于区别不同业务 |
 | result | 必选 | string | 审核结果，0-审核不通过；1-审核通过 |
+| reason | 必选 | string | 结果原因 |
 
 #### 应答示例
 
