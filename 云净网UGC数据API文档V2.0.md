@@ -356,7 +356,7 @@ platform_id=1&version=2.0&timestamp=2015-09-09 17:08:55&sign=XveWj8HGsjlSdo6%2fX
 
 ### 5.1 Java代码示例
 
-**示例附件**：[yunclean-api-java-2.0.zip](https://dn-yunclean.qbox.me/documents/docs_guide/yuncleanapi-java-2.0.rar)
+**示例附件**：[yunclean-api-java-2.0.zip](https://dn-yunclean.qbox.me/documents/docs_guide/yunclean-api-java-V2.0.zip)
 
 ### 5.2 PHP代码示例
 
