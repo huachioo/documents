@@ -379,4 +379,3 @@ platform_id=1&version=2.0&timestamp=2015-09-09 17:08:55&sign=XveWj8HGsjlSdo6%2fX
     "master": 1
 }]
 ```
-。
