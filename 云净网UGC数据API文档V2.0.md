@@ -108,7 +108,7 @@ Content-Length: 512
 Expect: 100-continue
 Connection: Keep-Alive
 
-app_id=201608200001&version=2.0&timestamp=2016-08-24 16:45:04&sign=KYqidJA21UdrJBkaP%2ffDn6Oi9fLdIOlBIhDPz2XP77xyrSkq%2b2POtVjWX1AZ4rHYd%2fmYzIyHociqJd9mAEz7RP4sxIJSe5kQOUSXhrSYpBmySfHtNr3BrvT0dKtN5tOnDnX5xRblmMtJKGl1MhCe7z7U8ttoR9Xn%2fKWzRm0cP88%3d&json_data=%7b%22id%22%3a%22d95dbee7aedc4e75a78e3dc09d1320aa%22%2c%22relation_id%22%3a%2212321%22%2c%22publish_date%22%3a%222015-08-24+16%3a45%3a04%22%2c%22user_id%22%3a%228899%22%2c%22ip%22%3a%22127.0.0.2%22%2c%22url%22%3a%22%e4%bd%a0%e5%a5%bd%ef%bc%81%22%7d
+app_id=201608200001&version=2.0&timestamp=2016-08-24+16%3A45%3A04&sign=KYqidJA21UdrJBkaP%2ffDn6Oi9fLdIOlBIhDPz2XP77xyrSkq%2b2POtVjWX1AZ4rHYd%2fmYzIyHociqJd9mAEz7RP4sxIJSe5kQOUSXhrSYpBmySfHtNr3BrvT0dKtN5tOnDnX5xRblmMtJKGl1MhCe7z7U8ttoR9Xn%2fKWzRm0cP88%3d&json_data=%7b%22id%22%3a%22d95dbee7aedc4e75a78e3dc09d1320aa%22%2c%22relation_id%22%3a%2212321%22%2c%22publish_date%22%3a%222015-08-24+16%3a45%3a04%22%2c%22user_id%22%3a%228899%22%2c%22ip%22%3a%22127.0.0.2%22%2c%22url%22%3a%22%e4%bd%a0%e5%a5%bd%ef%bc%81%22%7d
 ```
 
 #### 编码前json_data样例
@@ -148,6 +148,9 @@ app_id=201608200001&version=2.0&timestamp=2016-08-24 16:45:04&sign=KYqidJA21UdrJ
 | id | 必选 | String(32) | 数据Id |
 | relation_id | 必选 | String(32) | 数据关联Id |
 | timestamp | 必选 | string | 云净网服务器的时间，格式“yyyy-MM-dd HH:mm:ss” |
+| level | 必选 | Integer | 分类标识 |
+| words | 必选 | string | 涉及敏感词 |
+| reason_code | 必选 | string | 原因类型，0-正常，1-政治，2-色情，3-违法，4-违规，6-用户行为，7-疑似广告，9-个性化定制 |
 | reason | 必选 | string | 结果原因 |
 
 #### 应答示例
@@ -159,11 +162,15 @@ Server: Microsoft-HTTPAPI/2.0
 Date: Mon, 24 Aug 2015 08:45:05 GMT
 
 {
-    "code": 1001,
-    "msg": "OK-PASS",
-    "id": "",
-    "relation_id": "",
-    "timestamp": "2015-08-24 16:45:05"
+  "code": 1001,
+  "msg": "OK-passed.",
+  "id": "",
+  "relation_id": "",
+  "timestamp": "2015-08-24 16:45:05",
+  "level": 0,
+  "words": "",
+  "reason_code": "0",
+  "reason": "正常"
 }
 ```
 
@@ -292,7 +299,7 @@ Content-Length: 512
 Expect: 100-continue
 Connection: Keep-Alive
 
-platform_id=1&version=2.0&timestamp=2015-09-09 17:08:55&sign=XveWj8HGsjlSdo6%2fX7WTN%2bmh6bkpEt3XBb9VwsPP5V8uPjzBl%2fQNvVFRiJy5egsxBa0DDV20tQPUuN%2begbTR8z457717uHtTc4zYyrcJFeBTaao3au29d5iMUeXHDk%2bHH3ahRjRVOV06X5yaNO7EkAIGGlIqS4akvWlI61MDPV4%3d&json_data=%7b%22id%22%3a%228a32158b836642c19e0807d0f13a73c3%22%2c%22relation_id%22%3a%2212321%22%2c
+platform_id=1&version=2.0&timestamp=2015-09-09+17%3A08%3A55&sign=XveWj8HGsjlSdo6%2fX7WTN%2bmh6bkpEt3XBb9VwsPP5V8uPjzBl%2fQNvVFRiJy5egsxBa0DDV20tQPUuN%2begbTR8z457717uHtTc4zYyrcJFeBTaao3au29d5iMUeXHDk%2bHH3ahRjRVOV06X5yaNO7EkAIGGlIqS4akvWlI61MDPV4%3d
 ```
 
 ### 4.4 应答描述
