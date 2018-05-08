@@ -95,7 +95,7 @@ Java代码实现如下：
 |msg_time|必传|string|消息发送时间，格式为：“yyyy-MM-dd HH:mm:ss”|
 |ip_address|必传|string|发消息用户的IP地址|
 |user_id|必传|string|发消息用户ID|
-|message_type|必传|int|消息类型（0 用户消息、1 系统消息、2 发送礼物、3 图片、 4 转发、5 关注、6 红包、7 私信）|
+|message_type|必传|int|消息类型（0 用户消息、1 系统消息、2 发送礼物、3 图片、 4 转发、5 关注、6 红包、7 私信）8 图片(base64)|
 |msg_content|必传|string|消息内容，如果消息类型是为片，此参数为图片链接|
 |nick_name|选传|string|发消息用户昵称|
 |star_level|选传|string|发消息用户等级|
